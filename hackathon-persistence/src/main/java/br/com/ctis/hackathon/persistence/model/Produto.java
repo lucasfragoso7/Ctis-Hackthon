@@ -1,9 +1,6 @@
 package br.com.ctis.hackathon.persistence.model;
 
-import java.util.List;
-
 import javax.persistence.Column;
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -30,8 +27,7 @@ public class Produto extends EntidadeBase<Long> {
 	@Column(name = "preco", nullable = false)
 	private float preco;
 	
-	@ElementCollection
-	private List<String> categorias;
+
 	
 	@Column(name = "dataDeCriacao")
 	private Integer dataDeCriacao;
@@ -82,19 +78,6 @@ public class Produto extends EntidadeBase<Long> {
 		this.preco = preco;
 	}
 
-	/**
-	 * @return the categorias
-	 */
-	public List<String> getCategorias() {
-		return categorias;
-	}
-
-	/**
-	 * @param categorias the categorias to set
-	 */
-	public void setCategorias(List<String> categorias) {
-		this.categorias = categorias;
-	}
 
 	/**
 	 * @return the dataDeCriacao
@@ -131,7 +114,7 @@ public class Produto extends EntidadeBase<Long> {
 	public int hashCode() {
 		final int prime = 31;
 		int result = super.hashCode();
-		result = prime * result + ((categorias == null) ? 0 : categorias.hashCode());
+	
 		result = prime * result + ((dataDeCriacao == null) ? 0 : dataDeCriacao.hashCode());
 		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((nome == null) ? 0 : nome.hashCode());
@@ -152,11 +135,6 @@ public class Produto extends EntidadeBase<Long> {
 		if (getClass() != obj.getClass())
 			return false;
 		Produto other = (Produto) obj;
-		if (categorias == null) {
-			if (other.categorias != null)
-				return false;
-		} else if (!categorias.equals(other.categorias))
-			return false;
 		if (dataDeCriacao == null) {
 			if (other.dataDeCriacao != null)
 				return false;

@@ -1,7 +1,5 @@
 package br.com.ctis.hackathon.dto;
 
-import java.util.List;
-
 import br.com.ctis.hackathon.enumeration.StatusEnum;
 
 public class ProdutoDTO extends BaseDTO {
@@ -22,7 +20,6 @@ public class ProdutoDTO extends BaseDTO {
 	private Integer dataDeCriacao;
 	
 	
-	private List<String> categorias;
 
 	
 	private StatusEnum status;
@@ -69,19 +66,6 @@ public class ProdutoDTO extends BaseDTO {
 		this.dataDeCriacao = dataDeCriacao;
 	}
 
-	/**
-	 * @return the categorias
-	 */
-	public List<String> getCategorias() {
-		return categorias;
-	}
-
-	/**
-	 * @param categorias the categorias to set
-	 */
-	public void setCategorias(List<String> categorias) {
-		this.categorias = categorias;
-	}
 
 	/**
 	 * @return the status
